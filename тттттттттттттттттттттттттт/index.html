@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЕГЭ-навигатор</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка сайта с навигацией -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <i class="fas fa-compass"></i>
+                    <span>ЕГЭ-навигатор</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#main">Главная</a></li>
+                    <li><a href="#materials">Материалы</a></li>
+                    <li><a href="#calculator">Калькулятор баллов</a></li>
+                </ul>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Главный экран -->
+    <main class="main-screen" id="main">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">ЕГЭ-навигатор</h1>
+                <p class="hero-description">
+                    Современная платформа для подготовки к Единому Государственному Экзамену. 
+                    Здесь вы найдете структурированные материалы по всем предметам, 
+                    интерактивный калькулятор баллов и полезные рекомендации для успешной сдачи экзаменов.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#materials" class="btn btn-primary">Изучить материалы</a>
+                    <a href="#calculator" class="btn btn-secondary">Рассчитать баллы</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-placeholder">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Раздел "Материалы" -->
+    <section class="materials-section" id="materials">
+        <div class="container">
+            <h2 class="section-title">Материалы для подготовки</h2>
+            <p class="section-subtitle">Структурированные материалы по всем предметам ЕГЭ</p>
+            
+            <div class="subject-filters">
+                <button class="filter-btn active" data-filter="all">Все предметы</button>
+                <button class="filter-btn" data-filter="math">Математика</button>
+                <button class="filter-btn" data-filter="russian">Русский язык</button>
+                <button class="filter-btn" data-filter="physics">Физика</button>
+                <button class="filter-btn" data-filter="informatics">Информатика</button>
+                <button class="filter-btn" data-filter="social">Обществознание</button>
+            </div>
+            
+            <div class="subjects-container">
+                <!-- Математика -->
+                <div class="subject-card" data-subject="math">
+                    <div class="subject-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3 class="subject-title">Математика</h3>
+                    <div class="topics-list">
+                        <h4>Темы для изучения:</h4>
+                        <ul>
+                            <li>Алгебра и начала анализа</li>
+                            <li>Геометрия</li>
+                            <li>Уравнения и неравенства</li>
+                            <li>Производная и ее применение</li>
+                            <li>Теория вероятностей</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="subject-link">Перейти к материалам <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Русский язык -->
+                <div class="subject-card" data-subject="russian">
+                    <div class="subject-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="subject-title">Русский язык</h3>
+                    <div class="topics-list">
+                        <h4>Темы для изучения:</h4>
+                        <ul>
+                            <li>Орфография и пунктуация</li>
+                            <li>Выразительные средства языка</li>
+                            <li>Текст и его анализ</li>
+                            <li>Сочинение-рассуждение</li>
+                            <li>Нормы современного русского языка</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="subject-link">Перейти к материалам <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Физика -->
+                <div class="subject-card" data-subject="physics">
+                    <div class="subject-icon">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <h3 class="subject-title">Физика</h3>
+                    <div class="topics-list">
+                        <h4>Темы для изучения:</h4>
+                        <ul>
+                            <li>Механика</li>
+                            <li>Молекулярная физика и термодинамика</li>
+                            <li>Электродинамика</li>
+                            <li>Оптика</li>
+                            <li>Квантовая физика</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="subject-link">Перейти к материалам <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Информатика -->
+                <div class="subject-card" data-subject="informatics">
+                    <div class="subject-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="subject-title">Информатика</h3>
+                    <div class="topics-list">
+                        <h4>Темы для изучения:</h4>
+                        <ul>
+                            <li>Алгоритмы и программирование</li>
+                            <li>Архитектура компьютера</li>
+                            <li>Базы данных</li>
+                            <li>Компьютерные сети</li>
+                            <li>Логика и теория множеств</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="subject-link">Перейти к материалам <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Обществознание -->
+                <div class="subject-card" data-subject="social">
+                    <div class="subject-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3 class="subject-title">Обществознание</h3>
+                    <div class="topics-list">
+                        <h4>Темы для изучения:</h4>
+                        <ul>
+                            <li>Человек и общество</li>
+                            <li>Экономика</li>
+                            <li>Социальные отношения</li>
+                            <li>Политика</li>
+                            <li>Право</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="subject-link">Перейти к материалам <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел "Калькулятор баллов" -->
+    <section class="calculator-section" id="calculator">
+        <div class="container">
+            <h2 class="section-title">Калькулятор баллов ЕГЭ</h2>
+            <p class="section-subtitle">Введите баллы по предметам, чтобы рассчитать общую сумму</p>
+            
+            <div class="calculator-container">
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="subject1">Русский язык:</label>
+                        <div class="input-with-max">
+                            <input type="number" id="subject1" min="0" max="100" value="0" class="score-input">
+                            <span class="max-score">макс. 100</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject2">Математика (профиль):</label>
+                        <div class="input-with-max">
+                            <input type="number" id="subject2" min="0" max="100" value="0" class="score-input">
+                            <span class="max-score">макс. 100</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject3">Предмет 3:</label>
+                        <div class="input-with-max">
+                            <input type="number" id="subject3" min="0" max="100" value="0" class="score-input">
+                            <span class="max-score">макс. 100</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject4">Предмет 4:</label>
+                        <div class="input-with-max">
+                            <input type="number" id="subject4" min="0" max="100" value="0" class="score-input">
+                            <span class="max-score">макс. 100</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject5">Предмет 5:</label>
+                        <div class="input-with-max">
+                            <input type="number" id="subject5" min="0" max="100" value="0" class="score-input">
+                            <span class="max-score">макс. 100</span>
+                        </div>
+                    </div>
+                    
+                    <div class="calculator-actions">
+                        <button id="calculateBtn" class="btn btn-primary">
+                            <i class="fas fa-calculator"></i> Рассчитать общую сумму
+                        </button>
+                        <button id="resetBtn" class="btn btn-secondary">
+                            <i class="fas fa-redo"></i> Сбросить
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="calculator-result">
+                    <div class="result-card">
+                        <h3>Результат расчета</h3>
+                        <div class="total-score" id="totalScore">0</div>
+                        <p class="result-label">Сумма баллов ЕГЭ</p>
+                        
+                        <div class="result-details">
+                            <h4>Информация:</h4>
+                            <p id="resultMessage">Введите баллы по предметам и нажмите "Рассчитать"</p>
+                            <div class="score-info">
+                                <div class="info-item">
+                                    <span class="info-label">Максимально возможная сумма:</span>
+                                    <span class="info-value">500</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Количество предметов:</span>
+                                    <span class="info-value">5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-compass"></i>
+                    <span>ЕГЭ-навигатор</span>
+                </div>
+                <p class="footer-description">
+                    Образовательный проект для подготовки к Единому Государственному Экзамену.
+                    Все материалы предоставляются бесплатно.
+                </p>
+                <p class="footer-copyright">© 2026 ЕГЭ-навигатор. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
